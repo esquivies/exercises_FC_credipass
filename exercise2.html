@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+</head>
+<body>
+    
+    <h1 id="title"> exercise 2</h1>
+
+    <input id="myText" type="text" value="palindrome">
+    <button onclick="send_post()">Enviar</button>
+
+</body>
+</html>
+
+<script>
+
+function myFuntion() {
+    
+}
+
+function send_post() {
+
+    $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:8080/palindrome",
+        data: { phrase: this.document.getElementById('myText').value } ,
+        dataType: 'json',
+        success: function( data, textStatus, jQxhr ){
+            console.log('success');
+            console.log(( data.palindrome ));
+            document.getElementById('title').innerHTML = data.palindrome;
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+            console.log( errorThrown );
+        }
+    });
+
+
+}
+
+
+
+</script>

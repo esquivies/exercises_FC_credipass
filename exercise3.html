@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <div id="app">
+        <button class="btn" v-on:click="countFunction">Count!</button>
+        <span>{{count}}</span>
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    var app = new Vue({
+    el: '#app',
+    data: {
+        count: 0
+    },
+    methods: {
+        countFunction: function (){
+            this.count++;
+            console.log(this.count)
+        }
+    }
+    })
+</script>

@@ -1,0 +1,28 @@
+<h1>Hi!, exercise 1</h1>
+
+
+<script>
+ console.log('starting exercise 1');
+
+const count = (() => {
+    count._times++;
+    return count._times;
+}) // replace this with your code;
+count._times = 0;
+
+console.log(count()); // outputs 0
+console.log(count()); // outputs 1
+console.log(count()); // outputs 2
+
+</script>
+
+<!-- 
+    Como sucede esto?, usamos una variable local _times
+    para usada dentro de la funcion pero inicializada fuera de esta
+    mas precisamente en el orden, entonces el truco esta en jugar
+    con el orden de compilacion, para que funcione asi, ya que se 
+    declara la funcion y se inicializa la variable, antes de ser usada
+
+
+
+-->
